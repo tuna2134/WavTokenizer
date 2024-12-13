@@ -62,7 +62,7 @@ model:
         dim: 768
         n_fft: 1280 
         hop_length: 320  
-        padding: same
+        padding: center
 
 trainer:
   logger:

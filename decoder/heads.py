@@ -13,8 +13,7 @@ class FourierHead(nn.Module):
         """
         Args:
             x (Tensor): Input tensor of shape (B, L, H), where B is the batch size,
-                        L is the sequence length, and H denotes the model dimension.
-
+                        L is the sequence length, and H denotes the 
         Returns:
             Tensor: Reconstructed time-domain audio signal of shape (B, T), where T is the length of the output signal.
         """
@@ -62,8 +61,8 @@ class ISTFTHead(FourierHead):
         # phase = torch.atan2(y, x)
         # S = mag * torch.exp(phase * 1j)
         # better directly produce the complex value 
-        S = mag * (x + 1j * y)
-        audio = self.istft(S)
+        # S = mag * (x + 1j * y)
+        audio = self.istft(mag, x, y)
         return audio
 
 
