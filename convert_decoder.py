@@ -32,6 +32,7 @@ torch.onnx.export(
     (features, bandwidth_id),
     "decoder.onnx",
     input_names=["features", "bandwidth_id"],
+    output_names=["audio_outputs"],
     verbose=True,
     opset=22,
 )
